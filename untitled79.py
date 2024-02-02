@@ -20,7 +20,7 @@ dataset_id = 'bigquery-public-data.crypto_zilliqa'
 table_id = 'event_logs'
 
 # Get the table reference
-table_ref = client..dataset(dataset_id).table(table_id)
+table_ref = client.dataset(dataset_id).table(table_id)
 
 # Get the table schema
 table = client.get_table(table_ref)
