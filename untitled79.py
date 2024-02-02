@@ -16,7 +16,7 @@ project_id = 'focus-copilot-406210'
 client = bigquery.Client(project=project_id)
 
 # Define the BigQuery dataset and table
-dataset_id = 'bigquery-public-data.crypto_zilliqa'
+dataset_id = 'bigquery-public-data/crypto_zilliqa'
 table_id = 'event_logs'
 
 # Get the table reference
