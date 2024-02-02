@@ -7,6 +7,15 @@ Original file is located at
     https://colab.research.google.com/drive/1KMOp9QsVSfCPFyVaDO9Yvymz52uW0ulQ
 """
 
-Str="Hello World"
-print(Str)
+import pandas as pd
+
+# Replace 'your_gcs_path' with the actual path to your dataset on Google Cloud Storage
+#gcs_path = 'gs://your-bucket-name/your-dataset.csv'
+gcs_path =gs://cloud-ai-platform-473b9f9a-187c-4d55-abe8-c08eeef28beb/heart_stroke_data/healthcare-dataset-stroke-data.csv
+
+# Load the dataset into a pandas DataFrame
+df = pd.read_csv(gcs_path)
+
+# Display the top 10 rows of the dataset
+print(df.head(10))
 
