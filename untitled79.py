@@ -17,7 +17,7 @@ client = bigquery.Client(project=project_id)
 
 # Define the BigQuery dataset and table
 dataset_id = 'bigquery-public-data.eclipse_megamovie'
-table_id = 'bigquery-public-data.eclipse_megamovie.astrometry_corr_v_0_4'
+table_id = 'bigquery-public-data.eclipse_megamovie.astrometry_index_v_0_4'
 
 # Get the table reference
 table_ref = client.dataset(dataset_id).table(table_id)
