@@ -10,7 +10,7 @@ Original file is located at
 from google.cloud import bigquery
 
 # Set your GCP project ID
-project_id = '121'
+project_id = 'focus-copilot-406210'
 
 # Create a BigQuery client
 client = bigquery.Client(project=project_id)
