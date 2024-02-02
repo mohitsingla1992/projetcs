@@ -16,11 +16,11 @@ project_id = 'focus-copilot-406210'
 client = bigquery.Client(project=project_id)
 
 # Define the BigQuery dataset and table
-dataset_id = 'bigquery-public-data.eclipse_megamovie'
-table_id = 'astrometry_index_v_0_4'
+#dataset_id = 'bigquery-public-data.crypto_zilliqa'
+table_id = 'bigquery-public-data.crypto_zilliqa.event_logs'
 
 # Get the table reference
-table_ref = client.dataset(dataset_id).table(table_id)
+table_ref = client.table(table_id)
 
 # Get the table schema
 table = client.get_table(table_ref)
