@@ -7,15 +7,25 @@ Original file is located at
     https://colab.research.google.com/drive/1KMOp9QsVSfCPFyVaDO9Yvymz52uW0ulQ
 """
 
-import pandas as pd
+from google.cloud import bigquery
 
-# Replace 'your_gcs_path' with the actual path to your dataset on Google Cloud Storage
-gcs_path = "https://storage.cloud.google.com/mohit_123/train.csv"
-#gcs_path =gs://cloud-ai-platform-473b9f9a-187c-4d55-abe8-c08eeef28beb/heart_stroke_data/healthcare-dataset-stroke-data.csv
+# Set your GCP project ID
+project_id = '121'
 
-# Load the dataset into a pandas DataFrame
-df = pd.read_csv(gcs_path)
+# Create a BigQuery client
+client = bigquery.Client(project=project_id)
 
-# Display the top 10 rows of the dataset
-print(df.head(10))
+# Define the BigQuery dataset and table
+dataset_id = 'bigquery-public-data.eclipse_megamovie'
+table_id = 'bigquery-public-data.eclipse_megamovie.astrometry_corr_v_0_4'
 
+# Get the table reference
+table_ref = client.dataset(dataset_id).table(table_id)
+
+# Get the table schema
+table = client.get_table(table_ref)
+schema = table.schema
+
+# Display the schema
+for field in schema:
+    print(f"Field: {field.name}, Type: {field.field_type}, Mode: {field.mode}")
